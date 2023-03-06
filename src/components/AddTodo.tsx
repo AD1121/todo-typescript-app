@@ -10,9 +10,10 @@ export const AddTodo: React.FC<Props> = ({ addTodo }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    // Making sure all extra white spaces are removed
     if (todo.trim()) {
       addTodo(todo.trim())
-      setTodo('')
+      setTodo('') // Empty the value of the input 
     }
   }
 

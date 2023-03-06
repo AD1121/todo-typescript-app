@@ -13,16 +13,17 @@ export const TodoList: React.FC<Props> = ({ todos, getTodo, deleteTodo  }) => {
     <ul>
       {todos.map(todo => (
         <li key={todo.id}>
+          {/* Adding checkbox to the li for user to make todo done */}
           { <input
             type="checkbox"
             checked={todo.completed}
             onChange={() => getTodo(todo.id)}
           /> }
+          {/* Checking if the todo completed or not */}
           {<span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
              {todo.todoItem}
           </span> }
-
-         
+          {/* Fontawesome trash icon for delete todo */}
           <i onClick={() => deleteTodo(todo.id)} className="fa-solid fa-trash"></i>
         </li>
       ))}
