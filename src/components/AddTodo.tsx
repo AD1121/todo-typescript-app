@@ -18,7 +18,7 @@ export const AddTodo: React.FC<Props> = ({ addTodo }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={todo} onChange={e => setTodo(e.target.value)} placeholder='Todo...'/>
+      <input className='add-todo' type="text" value={todo} onChange={e => setTodo(e.target.value)} placeholder='Todo...'/>
       <button type="submit">Add Todo</button>
     </form>
   )

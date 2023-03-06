@@ -15,3 +15,7 @@ button {
   padding: 1%;
   color: #fff;
 }
+
+.add-todo {
+  height: 30px;
+}

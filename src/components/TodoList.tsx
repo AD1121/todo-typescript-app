@@ -8,21 +8,22 @@ interface Props {
   deleteTodo: (id: number) => void
 }
 
-export const TodoList: React.FC<Props> = ({ todos, getTodo, deleteTodo }) => {
+export const TodoList: React.FC<Props> = ({ todos, getTodo, deleteTodo  }) => {
   return (
-    <ul className='list'>
+    <ul>
       {todos.map(todo => (
         <li key={todo.id}>
-          <input
+          { <input
             type="checkbox"
             checked={todo.completed}
             onChange={() => getTodo(todo.id)}
-          />
-          <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-            {todo.todoItem}
-          </span>
+          /> }
+          {<span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+             {todo.todoItem}
+          </span> }
+
+         
           <i onClick={() => deleteTodo(todo.id)} className="fa-solid fa-trash"></i>
-          {/* <button onClick={() => deleteTodo(todo.id)}>Delete</button> */}
         </li>
       ))}
     </ul>
