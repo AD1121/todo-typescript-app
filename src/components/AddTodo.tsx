@@ -19,7 +19,7 @@ export const AddTodo = ({ addTodo }: TodoFormProps) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={text} onChange={e => setText(e.target.value)} />
+      <input className='add-todo' type="text" value={text} onChange={e => setText(e.target.value)} placeholder='Add todo here...'/>
       <button type="submit">Add Todo</button>
     </form>
   )
