@@ -9,12 +9,13 @@ import { AddTodo } from './components/AddTodo'
     // Using useState to get the form value todo and add it to the list
   const [todos, setTodos] = useState<TodoItem[]>([])
 
+  // Add todo
   const addTodo = (todo: string) => {
     const newTodo = { id: Date.now(), todo, completed: false }
     setTodos([...todos, newTodo])
   }
 
-    // List and update todo
+    // List and update check if its done todo
   const getTodo = (id: number) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {

@@ -1,6 +1,7 @@
 import React from 'react'
 import './TodoList.css'
 import { TodoItem } from './InterfaceTodoItem' //Importing the interface for Todo
+
 interface TodoListProps {
   todos: TodoItem[]
   getTodo: (id: number) => void
