@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './AddTodo.css'
 
 interface Props {
   addTodo: (text: string) => void
@@ -17,7 +18,7 @@ export const AddTodo: React.FC<Props> = ({ addTodo }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={todo} onChange={e => setTodo(e.target.value)} />
+      <input type="text" value={todo} onChange={e => setTodo(e.target.value)} placeholder='Todo...'/>
       <button type="submit">Add Todo</button>
     </form>
   )

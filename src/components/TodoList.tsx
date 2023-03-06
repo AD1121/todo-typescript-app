@@ -1,4 +1,5 @@
 import React from 'react'
+import './TodoList.css'
 import { TodoItem } from './TodoItem' //Importing the interface for Todo
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 export const TodoList: React.FC<Props> = ({ todos, getTodo, deleteTodo }) => {
   return (
-    <ul>
+    <ul className='list'>
       {todos.map(todo => (
         <li key={todo.id}>
           <input
@@ -20,7 +21,8 @@ export const TodoList: React.FC<Props> = ({ todos, getTodo, deleteTodo }) => {
           <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
             {todo.todoItem}
           </span>
-          <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+          <i onClick={() => deleteTodo(todo.id)} className="fa-solid fa-trash"></i>
+          {/* <button onClick={() => deleteTodo(todo.id)}>Delete</button> */}
         </li>
       ))}
     </ul>

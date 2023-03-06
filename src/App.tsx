@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './App.css'
 import { TodoItem } from './components/TodoItem' //Importing the interface for Todo
 import { TodoList } from './components/TodoList'
 import { AddTodo } from './components/AddTodo'
@@ -31,8 +32,11 @@ const App = () => {
 
   return (
     <div>
-      <AddTodo addTodo={addTodo} />
-      <TodoList todos={todo} getTodo={getTodos} deleteTodo={deleteTodo} />
+      <div className="container">
+      <h1>Add todo!</h1>
+        <AddTodo addTodo={addTodo} />
+        <TodoList todos={todo} getTodo={getTodos} deleteTodo={deleteTodo} />
+      </div>
     </div>
   )
 }
