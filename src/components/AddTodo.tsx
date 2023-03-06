@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
 import './AddTodo.css'
 
-interface Props {
-  addTodo: (text: string) => void
+interface TodoFormProps {
+  addTodo: (todo: string) => void
 }
 
-export const AddTodo: React.FC<Props> = ({ addTodo }) => {
-  const [todo, setTodo] = useState('')
+export const AddTodo = ({ addTodo }: TodoFormProps) => {
+  const [text, setText] = useState('')
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // Making sure all extra white spaces are removed
-    if (todo.trim()) {
-      addTodo(todo.trim())
-      setTodo('') // Empty the value of the input 
+    if (text.trim()) {
+      addTodo(text)
+      setText('') // Empty the value of the input 
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input className='add-todo' type="text" value={todo} onChange={e => setTodo(e.target.value)} placeholder='Todo...'/>
+      <input type="text" value={text} onChange={e => setText(e.target.value)} />
       <button type="submit">Add Todo</button>
     </form>
   )
